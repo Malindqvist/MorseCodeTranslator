@@ -39,7 +39,8 @@ public class MorseCodeTranslator {
     }
 
     public String englishToMorse(String inText) {
-        testText = inText.trim().toLowerCase();
+        //Removes spaces and converts all chars to lowercase
+        testText = inText.replace(" ","").toLowerCase();
 
         for (int i = 0; i < testText.length(); i++) {
             translatedText += (morse.get(testText.charAt(i)) + " ");
