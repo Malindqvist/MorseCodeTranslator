@@ -4,6 +4,7 @@
 
 public class Main {
     public static void main(String[] args) {
-
+        MorseCodeTranslator MCT = new MorseCodeTranslator();
+        System.out.println(MCT.englishToMorse("hej"));
     }
 }
