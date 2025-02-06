@@ -9,12 +9,12 @@ public class Main {
         MorseCodeTranslator MCT = new MorseCodeTranslator();
         Scanner scanner = new Scanner(System.in);
         String userInput;
-        boolean validChoice = false;
         int choice = 0;
 
         System.out.println("Welcome to the Morse Code Translator");
 
         while (true) {
+            boolean validChoice = false;
             try {
                 System.out.println("What do you want to do?");
                 System.out.println("1. Translate from English to Morse Code");
@@ -43,6 +43,7 @@ public class Main {
                     case 1:
                         System.out.println("Enter the text you want to translate:");
                         System.out.println(MCT.englishToMorse(scanner.nextLine()));
+                        System.out.println();
                         break;
                     case 2:
                         System.out.println("Enter the Morse Code you want to translate:");
@@ -50,13 +51,13 @@ public class Main {
                         //Checks the user input. Only dots, dashes and spaces are allowed
                         if (userInput.matches("[.\\s\\-]+")) {
                             System.out.println(MCT.morseToEnglish(userInput));
+                            System.out.println();
                         } else {
                             System.out.println("Invalid input. Only dots, dashes and spaces are allowed.");
                         }
-
                         break;
                     default:
-                        System.out.println("Invalid input");
+                        System.out.println("Invalid input!");
                 }
             } catch (Exception e) {
                 System.out.println("Error: " + e);
